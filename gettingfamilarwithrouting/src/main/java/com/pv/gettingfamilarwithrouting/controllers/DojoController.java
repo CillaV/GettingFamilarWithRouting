@@ -17,17 +17,35 @@ public class DojoController {
 		return "The dojo is awesome!";
 	}
 	
+// 	@RequestMapping("/{location}")
+// 	public String location(@PathVariable("location") String locationName) {
+// 		if( locationName == "burbank") {
+// 			return locationName + " dojo is located in Sothern California";
+// 		}
+// 		if( locationName == "san-jose") {
+// 			return locationName + " dojo is the headquarters";
+// 		}		
+// 			else {
+// 				return "hi friend.";
+// 			}
+// 	}
+
+	
+	// instead of if else statements -- use of switch and case 
+	// see link --> https://www.w3schools.com/java/java_switch.asp
+	
 	@RequestMapping("/{location}")
 	public String location(@PathVariable("location") String locationName) {
-		if( locationName == "burbank") {
-			return locationName + " dojo is located in Sothern California";
+		switch(locationName) {
+		case "burbank":
+			return "Burbank Dojo is located in Southern California";
+		case "san-jose":
+			return "San Jose dojo is the headquarters";
+		default:
+			return "Hi friend.";
 		}
-		if( locationName == "san-jose") {
-			return locationName + " dojo is the headquarters";
-		}		
-			else {
-				return "hi friend.";
-			}
 	}
-
+	
+	
+	
 }
